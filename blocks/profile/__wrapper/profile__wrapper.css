@@ -4,6 +4,10 @@
     align-items: center;
 }
 
-@media (max-width: 320px) {
-    
+@media (max-width: 768px) {
+    .profile__wrapper {
+        display: flex;
+        margin-bottom: 36px;
+        align-items: center;
+    }  
 }
