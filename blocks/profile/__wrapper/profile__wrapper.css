@@ -1,0 +1,9 @@
+.profile__wrapper {
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+}
+
+@media (max-width: 320px) {
+    
+}
