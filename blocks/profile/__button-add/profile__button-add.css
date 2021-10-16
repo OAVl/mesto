@@ -9,6 +9,11 @@
     background-image: url('../../../images/button-add.svg');
     background-repeat: no-repeat;
     background-position: center;
+    cursor: pointer;
+}
+
+.profile__button-add:hover {
+    opacity: 0.6;
 }
 
 @media (max-width: 768px) {
