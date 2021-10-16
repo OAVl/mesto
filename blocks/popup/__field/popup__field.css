@@ -1,6 +1,7 @@
 .popup__field {
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-top: 5px;
     padding-bottom: 13px;
     font-weight: normal;
     font-size: 14px;
@@ -8,5 +9,5 @@
 }
 
 .popup__field:first-child {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }

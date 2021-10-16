@@ -9,6 +9,7 @@
     border: none;
     padding: 14px 124px 18px 125px;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 .popup__button:hover {
