@@ -1,16 +1,17 @@
 .elements__like {
-    width: 29px;
-    height: 20px;
+    width: 26px;
+    height: 19px;
     margin-top: 5px;
     cursor: pointer;
-    fill: transparent;
-    stroke: black; 
+    background-image: url('../../../images/like.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .elements__like:hover {
-    stroke: rgba(0, 0, 0, 0.5); 
+    opacity: 0.5;
 }
 
 .elements__like:active {
-    fill: #000;
+    background-image: url('../../../images/like-active.svg');
 }
