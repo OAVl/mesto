@@ -3,9 +3,3 @@
     margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-    .root__wrapper {
-        margin: 0 19px;
-    }
-}
-

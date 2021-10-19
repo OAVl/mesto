@@ -1,11 +1,7 @@
 .popup__container {
     background-color: #fff;
     z-index: 12;
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    right: 50%;
-    margin-left: -220px;
+    position: relative;
     width: 430px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
@@ -13,8 +9,6 @@
 
 @media (max-width: 768px) {
     .popup__container {
-        top: 16%;
         width: 282px;
-        margin-left: -140px;
     }
 }

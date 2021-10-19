@@ -6,8 +6,6 @@
 
 @media (max-width: 768px) {
     .profile__wrapper {
-        display: flex;
         margin-bottom: 36px;
-        align-items: center;
     }  
 }
