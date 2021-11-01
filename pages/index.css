@@ -29,3 +29,13 @@
 @import '../blocks/popup/__button/popup__button.css';
 @import '../blocks/popup/__button-close/popup__button-close.css';
 @import '../blocks/popup/_opened/popup_opened.css';
+@import '../blocks/popup/__element/popup__element.css';
+@import '../blocks/elements/__like/_active/elements__like_active.css';
+@import '../blocks/elements/__button-delete/elements__button-delete.css';
+@import '../blocks/image-popup/image-popup.css';
+@import '../blocks/image-popup/__text/image-popup__text.css';
+@import '../blocks/image-popup/__button-close/image-popup__button-close.css';
+@import '../blocks/image-popup/__container/image-popup__container.css';
+@import '../blocks/image-popup/__img/image-popup__img.css';
+@import '../blocks/image-popup/_opened/image-popup_opened.css';
+@import '../blocks/popup/__element/_open/popup__element_open.css';

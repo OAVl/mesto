@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="pages/index.css"> 
+        <link rel="stylesheet" href="pages/index.css">
         <title>Mesto</title>
     </head>
     <body class="root">
@@ -11,7 +11,7 @@
             <header class="header">
                 <img class="header__logo" src="images/logo.svg" alt="логотип проекта Место">
             </header>
-    
+
             <main class="main">
                 <section class="profile">
                     <div class="profile__container">
@@ -25,72 +25,60 @@
                             <button class="profile__button-edit" type="button"></button>
                         </div>
                     </div>
-                    
+
                     <button class="profile__button-add" type="button"></button>
                 </section>
 
-                <section class="elements">
-                    <article class="elements__element">
-                        <img class="elements__image" src="images/canada.jpg" alt="природа Канады">
-                        <div class="elements__wrapper">
-                            <h2 class="elements__title">Канада</h2>
-                            <button class="elements__like" type="button"></button>
-                        </div>                       
-                    </article>
-                    <article class="elements__element">
-                        <img class="elements__image" src="images/dolina-narzanov.jpg" alt="Долина Нарзанов">
-                        <div class="elements__wrapper">
-                            <h2 class="elements__title">Долина Нарзанов</h2>
-                            <button class="elements__like" type="button"></button>
-                        </div>
-                    </article>
-                    <article class="elements__element">
-                        <img class="elements__image" src="images/fareo-island.jpg" alt="Фарерские острова">
-                        <div class="elements__wrapper">
-                            <h2 class="elements__title">Фарерские острова</h2>
-                            <button class="elements__like" type="button"></button>
-                        </div>
-                    </article>
-                    <article class="elements__element">
-                        <img class="elements__image" src="images/gizgit.jpg" alt="Гижгит">
-                        <div class="elements__wrapper">
-                            <h2 class="elements__title">Гижгит</h2>
-                            <button class="elements__like" type="button"></button>
-                        </div>
-                    </article>
-                    <article class="elements__element">
-                        <img class="elements__image" src="images/karachaevo.jpg" alt="Карачаевск">
-                        <div class="elements__wrapper">
-                            <h2 class="elements__title">Карачаевск</h2>
-                            <button class="elements__like" type="button"></button>
-                        </div>
-                    </article>
-                    <article class="elements__element">
-                        <img class="elements__image" src="images/kichi-balik.jpg" alt="Кичи-Балык">
-                        <div class="elements__wrapper">
-                            <h2 class="elements__title">Кичи-Балык</h2>
-                            <button class="elements__like" type="button"></button>
-                        </div>
-                    </article>
-                </section>
+                <section class="elements"></section>
             </main>
-    
+
             <footer class="footer">
                 <p class="footer__text">&#169; 2020 Mesto Russia</p>
             </footer>
         </div>
-        
+
         <section class="popup">
             <div class="popup__container">
                <h2 class="popup__title">Редактировать профиль</h2>
                <form class="popup__form" name="form">
-                   <input class="popup__field popup__field_input_name" name="userName" type="text" placeholder="Ваше имя">                  
-                   <input class="popup__field popup__field_input_job" name="userJob" type="text" placeholder="Ваша работа">                 
+                   <input class="popup__field popup__field_input_name" name="userName" type="text" placeholder="Ваше имя">
+                   <input class="popup__field popup__field_input_job" name="userJob" type="text" placeholder="Ваша работа">
                    <button class="popup__button" type="submit">Сохранить</button>
                </form>
                <button class="popup__button-close" type="button"></button>
             </div>
         </section>
+
+        <section class="popup__element">
+          <div class="popup__container">
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form" name="form">
+              <input class="popup__field popup__field_input_name" name="elementName" type="text" placeholder="Название">
+              <input class="popup__field popup__field_input_job" name="link" type="text" placeholder="Ссылка на картинку">
+              <button class="popup__button" type="submit">Создать</button>
+            </form>
+            <button class="popup__button-close" type="button"></button>
+          </div>
+        </section>
+
+        <section class="image-popup">
+          <div class="image-popup__container">
+            <img class="image-popup__img" src="#" alt="фотография попапа">
+            <p class="image-popup__text"></p>
+            <button class="image-popup__button-close" type="button"></button>
+          </div>
+        </section>
+
+        <template class="template-element">
+          <article class="elements__element">
+            <img class="elements__image" src="#" alt="фотография карточки">
+            <button class="elements__button-delete"></button>
+            <div class="elements__wrapper">
+              <h2 class="elements__title"></h2>
+              <button class="elements__like" type="button"></button>
+            </div>
+          </article>
+        </template>
 
         <script src="scripts/index.js"></script>
     </body>
