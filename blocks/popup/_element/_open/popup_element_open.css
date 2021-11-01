@@ -1,4 +1,4 @@
-.popup__element_open {
+.popup_element_open {
   display: flex;
   visibility: visible;
   height: 100%;
