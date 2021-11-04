@@ -1,4 +1,4 @@
-.elements__button-delete {
+.element__button-delete {
   position: absolute;
   background: url("../../../images/deleteButton.svg") center no-repeat;
   width: 18px;
@@ -9,6 +9,6 @@
   cursor: pointer;
 }
 
-.elements__button-delete:hover {
+.element__button-delete:hover {
   opacity: 0.6;
 }

@@ -9,9 +9,10 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    height: 0;
+    height: 100%;
     opacity: 0;
-    transition-property: opacity, height;
+    transition-property: opacity, height, hidden;
     transition-duration: 0.8s, 0s;
     transition-delay: 0s, 0.8s;
+    visibility: hidden;
 }
