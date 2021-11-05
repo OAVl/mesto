@@ -51,17 +51,12 @@ function render() {
   })
 }
 
-function openedPopup (popup) {
+function openPopup (popup) {
   popup.classList.add('popup_opened');
 }
 
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
-  popup.addEventListener('click', (evt) => {
-    if (evt.target === evt.currentTarget) {
-      popup.classList.remove('popup_opened');
-    }
-  })
 }
 
 function generateCard (name, link) {
@@ -87,7 +82,7 @@ function generateCard (name, link) {
     imgPopup.src = link;
     titlePopup.textContent = name;
 
-    openedPopup(bigImagePopup);
+    openPopup(bigImagePopup);
   });
 
   return itemElement;
@@ -102,13 +97,15 @@ function handleSubmitCard(evt) {
   const valueTitle = elementTitleInput.value;
   const valueImg = elementImgInput.value;
   renderItem(valueTitle, valueImg);
+  elementTitleInput.value = '';
+  elementImgInput.value = '';
   closePopup(popupAddElement);
 }
 
-function popupOpen() {
+function openProfilePopup() {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
-    openedPopup(popupProfile);
+    openPopup(popupProfile);
 }
 
 function formSubmitHandlerProfile (evt) {
@@ -118,14 +115,28 @@ function formSubmitHandlerProfile (evt) {
   closePopup(popupProfile);
 }
 
-closePopup(popupProfile);
-closePopup(popupAddElement);
-closePopup(bigImagePopup);
+bigImagePopup.addEventListener('click', (evt) => {
+  if (evt.target === evt.currentTarget) {
+    bigImagePopup.classList.remove('popup_opened');
+  }
+})
+
+popupProfile.addEventListener('click', (evt) => {
+  if (evt.target === evt.currentTarget) {
+    popupProfile.classList.remove('popup_opened');
+  }
+})
+
+popupAddElement.addEventListener('click', (evt) => {
+  if (evt.target === evt.currentTarget) {
+    popupAddElement.classList.remove('popup_opened');
+  }
+})
 closeBigImagePopup.addEventListener('click', () => {closePopup(bigImagePopup);})
-buttonOpenPopupProfile.addEventListener('click', popupOpen);
+buttonOpenPopupProfile.addEventListener('click', openProfilePopup);
 buttonClosePopupProfile.addEventListener('click', () => {closePopup(popupProfile);});
 popupFormProfile.addEventListener('submit', formSubmitHandlerProfile);
-elementAddButton.addEventListener('click', () => {openedPopup(popupAddElement);});
+elementAddButton.addEventListener('click', () => {openPopup(popupAddElement);});
 closeButtonPopupAddElement.addEventListener('click', () => {closePopup(popupAddElement);});
 elementForm.addEventListener('submit', handleSubmitCard);
 
