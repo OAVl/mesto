@@ -115,29 +115,27 @@ function formSubmitHandlerProfile (evt) {
   closePopup(popupProfile);
 }
 
+
 bigImagePopup.addEventListener('click', (evt) => {
-  if (evt.target === evt.currentTarget) {
-    bigImagePopup.classList.remove('popup_opened');
+  if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__button-close')) {
+    closePopup(bigImagePopup);
   }
 })
 
 popupProfile.addEventListener('click', (evt) => {
-  if (evt.target === evt.currentTarget) {
-    popupProfile.classList.remove('popup_opened');
+  if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__button-close')) {
+    closePopup(popupProfile);
   }
 })
 
 popupAddElement.addEventListener('click', (evt) => {
-  if (evt.target === evt.currentTarget) {
-    popupAddElement.classList.remove('popup_opened');
+  if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__button-close')) {
+    closePopup(popupAddElement);
   }
 })
-closeBigImagePopup.addEventListener('click', () => {closePopup(bigImagePopup);})
 buttonOpenPopupProfile.addEventListener('click', openProfilePopup);
-buttonClosePopupProfile.addEventListener('click', () => {closePopup(popupProfile);});
 popupFormProfile.addEventListener('submit', formSubmitHandlerProfile);
 elementAddButton.addEventListener('click', () => {openPopup(popupAddElement);});
-closeButtonPopupAddElement.addEventListener('click', () => {closePopup(popupAddElement);});
 elementForm.addEventListener('submit', handleSubmitCard);
 
 render();
