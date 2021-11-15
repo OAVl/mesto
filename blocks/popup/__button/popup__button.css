@@ -16,6 +16,19 @@
     opacity: 0.8;
 }
 
+.popup__button:disabled {
+  padding: 13px 123px 17px 124px;
+  color: #000000;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  background-color: transparent;
+  cursor: default;
+}
+
+.popup__button:disabled:hover {
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
     .popup__button {
         margin-top: 42px;

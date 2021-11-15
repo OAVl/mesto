@@ -34,3 +34,6 @@
 @import '../blocks/popup/__text/popup__text.css';
 @import '../blocks/popup/__wrapper/popup__wrapper.css';
 @import '../blocks/popup/__img/popup__img.css';
+@import '../blocks/popup/__label/popup__label.css';
+@import '../blocks/popup/__error/popup__error.css';
+@import '../blocks/popup/__field/_type/_error/popup__field_type_error.css';

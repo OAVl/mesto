@@ -1,6 +1,5 @@
 const popupProfile = document.querySelector('.popup_profile');
 const buttonOpenPopupProfile = document.querySelector('.profile__button-edit');
-const buttonClosePopupProfile = popupProfile.querySelector('.popup__button-close');
 const popupFormProfile = popupProfile.querySelector('.popup__form');
 const nameInput = popupFormProfile.querySelector('.popup__field_input_name');
 const jobInput = popupFormProfile.querySelector('.popup__field_input_job');
@@ -10,12 +9,10 @@ const elementList = document.querySelector('.elements');
 const templateElement = document.querySelector('.template-element');
 const popupAddElement = document.querySelector('.popup_element');
 const elementAddButton = document.querySelector('.profile__button-add');
-const closeButtonPopupAddElement = popupAddElement.querySelector('.popup__button-close');
 const elementTitleInput = popupAddElement.querySelector('.popup__field_input_name');
 const elementImgInput = popupAddElement.querySelector('.popup__field_input_job');
 const elementForm = popupAddElement.querySelector('.popup__form');
 const bigImagePopup = document.querySelector('.popup_image');
-const closeBigImagePopup = bigImagePopup.querySelector('.popup_image .popup__button-close');
 const initialCards = [
   {
     name: 'Архыз',
@@ -114,6 +111,14 @@ function formSubmitHandlerProfile (evt) {
   profileJob.textContent = jobInput.value;
   closePopup(popupProfile);
 }
+
+document.addEventListener('keydown', (evt) => {
+  if (evt.key === "Escape") {
+    closePopup(bigImagePopup);
+    closePopup(popupProfile);
+    closePopup(popupAddElement);
+  }
+})
 
 
 bigImagePopup.addEventListener('click', (evt) => {

@@ -40,10 +40,34 @@
         <div class="popup popup_profile">
             <div class="popup__container">
                <h2 class="popup__title">Редактировать профиль</h2>
-               <form class="popup__form" name="form">
-                   <input class="popup__field popup__field_input_name" name="userName" type="text" placeholder="Ваше имя">
-                   <input class="popup__field popup__field_input_job" name="userJob" type="text" placeholder="Ваша работа">
-                   <button class="popup__button" type="submit">Сохранить</button>
+               <form class="popup__form" name="form" novalidate>
+                 <label class="popup__label">
+                   <input class="popup__field popup__field_input_name"
+                          id="popup__name"
+                          name="userName"
+                          type="text"
+                          placeholder="Ваше имя"
+                          autocomplete="off"
+                          minlength="2"
+                          maxlength="40"
+                          required>
+                   <span id="popup__name-error" class="popup__error"></span>
+                 </label>
+
+                 <label class="popup__label">
+                   <input class="popup__field popup__field_input_job"
+                          id="popup__job"
+                          name="userJob"
+                          type="text"
+                          placeholder="Ваша работа"
+                          autocomplete="off"
+                          minlength="2"
+                          maxlength="200"
+                          required>
+                   <span id="popup__job-error" class="popup__error"></span>
+                 </label>
+
+                 <button class="popup__button" type="submit">Сохранить</button>
                </form>
                <button class="popup__button-close" type="button"></button>
             </div>
@@ -52,9 +76,30 @@
         <div class="popup popup_element">
           <div class="popup__container">
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form" name="form">
-              <input class="popup__field popup__field_input_name" name="elementName" type="text" placeholder="Название">
-              <input class="popup__field popup__field_input_job" name="link" type="text" placeholder="Ссылка на картинку">
+            <form class="popup__form" name="form" novalidate>
+              <label class="popup__label">
+                <input class="popup__field popup__field_input_name"
+                       id="popup__elementName"
+                       name="elementName"
+                       type="text"
+                       placeholder="Название"
+                       autocomplete="off"
+                       minlength="2"
+                       maxlength="30"
+                       required>
+                <span id="popup__elementName-error" class="popup__error"></span>
+              </label>
+
+              <label class="popup__label">
+                <input class="popup__field popup__field_input_job"
+                       id="popup__link"
+                       name="link"
+                       type="url"
+                       autocomplete="off"
+                       placeholder="Ссылка на картинку"
+                       required>
+                <span id="popup__link-error" class="popup__error"></span>
+              </label>
               <button class="popup__button" type="submit">Создать</button>
             </form>
             <button class="popup__button-close" type="button"></button>
@@ -81,5 +126,6 @@
         </template>
 
         <script src="scripts/index.js"></script>
+        <script src="scripts/validate.js"></script>
     </body>
 </html>
