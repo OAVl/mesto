@@ -8,7 +8,7 @@ function enableValidation() {
 }
 
 function addListenersToForm(form) {
-  const inputs = [...document.querySelectorAll('.popup__field')];
+  const inputs = [...form.querySelectorAll('.popup__field')];
   inputs.forEach(addListenersToInput)
 
   form.addEventListener('submit', handleSubmitForm);
