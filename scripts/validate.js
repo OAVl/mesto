@@ -1,14 +1,14 @@
 enableValidation();
 
 function enableValidation() {
-  const forms = [...document.querySelectorAll('.popup__form')];
+  const forms = Array.from(document.forms);
   forms.forEach(addListenersToForm);
   const formSecond = forms[1];
   toggleButton(formSecond);
 }
 
 function addListenersToForm(form) {
-  const inputs = [...form.querySelectorAll('.popup__field')];
+  const inputs = Array.from(form.elements);
   inputs.forEach(addListenersToInput)
 
   form.addEventListener('submit', handleSubmitForm);
