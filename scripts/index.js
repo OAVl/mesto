@@ -126,7 +126,6 @@ function formSubmitHandlerProfile (evt) {
   closePopup(popupProfile);
 }
 
-
 popups.forEach((popup) => {
   popup.addEventListener('click', (evt) => {
     if (evt.target === evt.currentTarget || evt.target.classList.contains('popup__button-close')) {
