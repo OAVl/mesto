@@ -23,6 +23,8 @@
   box-sizing: border-box;
   background-color: transparent;
   cursor: default;
+  user-select: none;
+  pointer-events: none;
 }
 
 .popup__button:disabled:hover {

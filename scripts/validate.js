@@ -1,41 +1,49 @@
-enableValidation();
-
-function enableValidation() {
-  const forms = Array.from(document.forms);
-  forms.forEach(addListenersToForm);
-  const formSecond = forms[1];
-  toggleButton(formSecond);
+const config = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__field',
+  submitButtonSelector: '.popup__button',
+  inputErrorClass: 'popup__field_type_error',
 }
 
-function addListenersToForm(form) {
-  const inputs = Array.from(form.elements);
-  inputs.forEach(addListenersToInput)
-
-  form.addEventListener('submit', handleSubmitForm);
-  form.addEventListener('input', handleFormInput);
+function handleFormInput(evt, buttonElement) {
+  toggleButton(evt.currentTarget, buttonElement);
 }
 
-function handleSubmitForm(evt) {
-  evt.preventDefault();
+function toggleButton(form, buttonElement) {
+  buttonElement.disabled = !form.checkValidity();
 }
 
-function handleFormInput(evt) {
-  toggleButton(evt.currentTarget);
+const setEventListener = (formElement, {inputSelector, submitButtonSelector, inputErrorClass}) => {
+  const inputList = Array.from(document.querySelectorAll(inputSelector));
+  const buttonElement = formElement.querySelector(submitButtonSelector);
+
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener('input', (evt) => {
+      handleFieldValidation(evt, inputErrorClass);
+    })
+  });
+
+  formElement.addEventListener('input', (evt) => {
+    handleFormInput(evt, buttonElement);
+  })
 }
 
-function toggleButton(form) {
-  const button = form.querySelector('.popup__button');
-  button.disabled = !form.checkValidity();
+const enableValidation = ({formSelector, ...arr}) => {
+  const formList = Array.from(document.querySelectorAll(formSelector));
+  formList.forEach((formElement) => {
+    formElement.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+    });
+    setEventListener(formElement, arr);
+  });
 }
 
-function addListenersToInput(input) {
-  input.addEventListener('input', handleFieldValidation)
-}
-
-function handleFieldValidation(evt) {
+function handleFieldValidation(evt, inputErrorClass) {
   const element = evt.target;
   const elementError = document.querySelector(`#${element.id}-error`);
   element.setCustomValidity('');
-  element.classList.toggle('popup__field_type_error', !element.validity.valid);
+  element.classList.toggle(inputErrorClass, !element.validity.valid);
   elementError.textContent = element.validationMessage;
 }
+
+enableValidation(config);

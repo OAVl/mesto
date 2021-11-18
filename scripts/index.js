@@ -16,6 +16,7 @@ const bigImagePopup = document.querySelector('.popup_image');
 const imgPopup = document.querySelector('.popup__img');
 const titlePopup = document.querySelector('.popup__text');
 const popups = document.querySelectorAll('.popup');
+const buttonElement = popupAddElement.querySelector('.popup__button');
 const initialCards = [
   {
     name: 'Архыз',
@@ -108,7 +109,7 @@ function handleSubmitCard(evt) {
   renderItem(valueTitle, valueImg);
   elementTitleInput.value = '';
   elementImgInput.value = '';
-  enableValidation();
+  toggleButton(evt.currentTarget, buttonElement);
   closePopup(popupAddElement);
 }
 
@@ -136,7 +137,10 @@ popups.forEach((popup) => {
 
 buttonOpenPopupProfile.addEventListener('click', openProfilePopup);
 popupFormProfile.addEventListener('submit', formSubmitHandlerProfile);
-elementAddButton.addEventListener('click', () => {openPopup(popupAddElement);});
+elementAddButton.addEventListener('click', () => {
+  buttonElement.disabled = true;
+  openPopup(popupAddElement);
+});
 elementForm.addEventListener('submit', handleSubmitCard);
 
 render();
