@@ -1,11 +1,9 @@
 export default class FormValidator {
-    _popupAddElement = document.querySelector('.popup_element');
-    _buttonElement = this._popupAddElement.querySelector('.popup__button');
-    
-
-    constructor(config, formElement) {
+    constructor(config, formElement, inputList, buttonElement) {
         this._config = config;
         this._formElement = formElement;
+        this._inputList = inputList;
+       this._buttonElement = buttonElement;
     }
 
     _handleFieldValidation(evt, inputErrorClass) {
@@ -17,26 +15,23 @@ export default class FormValidator {
     }
 
     _setEventListener(formElement, {inputSelector, submitButtonSelector, inputErrorClass}) {
-        this._inputList = Array.from(document.querySelectorAll(inputSelector));
-        this._buttonElement = this._formElement.querySelector(submitButtonSelector);
-
         this._inputList.forEach((inputElement) => {
             inputElement.addEventListener('input', (evt) => {
             this._handleFieldValidation(evt, inputErrorClass);
             })
         });
 
-        this._formElement.addEventListener('input', (evt) => {
-            this._handleFormInput(evt, this._buttonElement);
+        this._formElement.addEventListener('input', () => {
+            this._handleFormInput(this._buttonElement);
         })
     }
 
-   _handleFormInput(evt) {
-        this._toggleButton(evt.currentTarget, this._buttonElement);
+   _handleFormInput() {
+        this._toggleButton(this._buttonElement);
     }
 
-    _toggleButton(form) {
-        this._buttonElement.disabled = !form.checkValidity();
+    _toggleButton() {
+        this._buttonElement.disabled = !this._formElement.checkValidity();
     }
 
     enableValidation({formSelector, ...arr}) {

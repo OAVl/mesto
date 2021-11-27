@@ -1,5 +1,6 @@
 import FormValidator from './FormValidator.js';
 import Card from './Card.js';
+import {initialCards} from './data.js';
 
 const popupProfile = document.querySelector('.popup_profile');
 const buttonOpenPopupProfile = document.querySelector('.profile__button-edit');
@@ -17,33 +18,11 @@ const elementImgInput = popupAddElement.querySelector('.popup__field_input_job')
 const elementForm = popupAddElement.querySelector('.popup__form');
 const popups = document.querySelectorAll('.popup');
 const buttonElement = popupAddElement.querySelector('.popup__button');
-const formList = Array.from(document.querySelectorAll('.popup__form'));
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+const popupButton = popupProfile.querySelector('.popup__button');
+const inputList = Array.from(document.querySelectorAll('.popup__field'));
+const formPopupProfile = popupProfile.querySelector('.popup__form');
+const formPopupAddElement = popupAddElement.querySelector('.popup__form');
+
 const config = {
   formSelector: '.popup__form',
   inputSelector: '.popup__field',
@@ -51,18 +30,23 @@ const config = {
   inputErrorClass: 'popup__field_type_error',
 }
 
-formList.forEach((formElement) => { 
-  const formValidation = new FormValidator(config, formElement);
-  formValidation.enableValidation(config);
-})
+function createdCard(name, link) {
+  const card = new Card(name, link, templateElement, openPopup);
+    card.render(elementList);
+}
+
+const validationFormProfile = new FormValidator(config, formPopupProfile, inputList, popupButton);
+validationFormProfile.enableValidation(config);
+
+const validationFormAddElement = new FormValidator(config, formPopupAddElement, inputList, buttonElement);
+validationFormAddElement.enableValidation(config);
 
 function render() {
   initialCards.forEach((item) => {
     const name = item.name;
     const link = item.link;
 
-    const card = new Card(name, link, templateElement, openPopup);
-    card.render(elementList);
+    createdCard(name, link);
   })
 }
 
@@ -88,8 +72,7 @@ function handleSubmitCard(evt) {
   const valueTitle = elementTitleInput.value;
   const valueImg = elementImgInput.value;
 
-  const card = new Card(valueTitle, valueImg, templateElement, openPopup);
-  card.render(elementList);
+  createdCard(valueTitle, valueImg);
 
   elementTitleInput.value = '';
   elementImgInput.value = '';

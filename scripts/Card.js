@@ -1,8 +1,6 @@
-export default class Card {
-    _imgPopup = document.querySelector('.popup__img');
-    _titlePopup = document.querySelector('.popup__text');
-    _bigImagePopup = document.querySelector('.popup_image');
-    
+import {imgPopup, titlePopup, bigImagePopup} from "./constants.js";
+
+export default class Card { 
     constructor(name, link, cardSelector, openPopup) {
         this._name = name;
         this._link = link;
@@ -15,16 +13,16 @@ export default class Card {
     }
 
     _handleOpenBigImage() {
-        this._imgPopup.src = this._link;
-        this._imgPopup.alt = this._name;
-        this._titlePopup.textContent = this._name;
+        imgPopup.src = this._link;
+        imgPopup.alt = this._name;
+        titlePopup.textContent = this._name;
 
-        this._openPopup(this._bigImagePopup);
+        this._openPopup(bigImagePopup);
     }
 
     _handleCardRemove() {
-        const parentElement = this._element.querySelector('.element__button-delete').closest('.element');
-        parentElement.remove();
+        this._element.remove();
+        this._element = null;
     }
 
     _setEventListeners() {
@@ -41,7 +39,7 @@ export default class Card {
         });
     }
 
-    render(container) {
+    _createCard() {
         this._element = this._cardSelector.content.cloneNode(true).children[0];
 
         const elementImage = this._element.querySelector('.element__image');
@@ -49,7 +47,12 @@ export default class Card {
         elementImage.src = this._link;
         elementImage.alt = this._name;
         this._setEventListeners();
-       
+
+        return this._element;
+    }
+
+    render(container) {
+        this._createCard();
         container.prepend(this._element);
     }
 }
