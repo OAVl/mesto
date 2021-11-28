@@ -52,7 +52,6 @@ export default class Card {
     }
 
     render(container) {
-        this._createCard();
-        container.prepend(this._element);
+        container.prepend(this._createCard());
     }
 }
