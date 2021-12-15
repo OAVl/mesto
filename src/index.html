@@ -3,19 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="pages/index.css">
         <title>Mesto</title>
     </head>
     <body class="root">
         <div class="root__wrapper">
             <header class="header">
-                <img class="header__logo" src="images/logo.svg" alt="логотип проекта Место">
+                <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="логотип проекта Место">
             </header>
 
             <main class="main">
                 <section class="profile">
                     <div class="profile__container">
-                        <img class="profile__avatar" src="images/avatar.jpg" alt="фото пользователя">
+                        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="фото пользователя">
 
                         <div class="profile__wrapper">
                             <div class="profile__info">
@@ -125,6 +124,6 @@
           </article>
         </template>
 
-        <script type="module" src="pages/index.js"></script>
+        <script type="module" src="index.js"></script>
     </body>
 </html>

@@ -1,6 +1,6 @@
 
 
-export default class Card { 
+export default class Card {
     constructor(name, link, cardSelector, handleCardClick) {
         this._name = name;
         this._link = link;
@@ -30,13 +30,13 @@ export default class Card {
             this._handleCardRemove();
         });
 
-        this._element.querySelector('.element__image').addEventListener('click', () => {           
+        this._element.querySelector('.element__image').addEventListener('click', () => {
             this._handleOpenBigImage();
         });
         this._handleCardClick.setEventListeners();
     }
 
-    _createCard() {
+    createCard() {
         this._element = this._cardSelector.content.cloneNode(true).children[0];
 
         const elementImage = this._element.querySelector('.element__image');
@@ -49,6 +49,6 @@ export default class Card {
     }
 
     render(container) {
-        container.prepend(this._createCard());
+        container.prepend(this.createCard());
     }
 }
