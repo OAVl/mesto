@@ -1,11 +1,11 @@
-import {imgPopup, titlePopup, bigImagePopup} from "./constants.js";
+
 
 export default class Card { 
-    constructor(name, link, cardSelector, openPopup) {
+    constructor(name, link, cardSelector, handleCardClick) {
         this._name = name;
         this._link = link;
         this._cardSelector = cardSelector;
-        this._openPopup = openPopup;
+        this._handleCardClick = handleCardClick;
     }
 
     _handleToggleLike(evt) {
@@ -13,11 +13,7 @@ export default class Card {
     }
 
     _handleOpenBigImage() {
-        imgPopup.src = this._link;
-        imgPopup.alt = this._name;
-        titlePopup.textContent = this._name;
-
-        this._openPopup(bigImagePopup);
+        this._handleCardClick.open()
     }
 
     _handleCardRemove() {
@@ -37,6 +33,7 @@ export default class Card {
         this._element.querySelector('.element__image').addEventListener('click', () => {           
             this._handleOpenBigImage();
         });
+        this._handleCardClick.setEventListeners();
     }
 
     _createCard() {
