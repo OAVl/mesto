@@ -5,29 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd4f68de-6e0d-4e1f-b44d-f59b76351fa7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.nojekyll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/mesto.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.nojekyll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormValidator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupWithForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PopupWithImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PopupWithImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +105,10 @@
       <updated>1639588046271</updated>
       <workItem from="1639588049448" duration="505000" />
       <workItem from="1639588648841" duration="9722000" />
+      <workItem from="1639641285798" duration="1326000" />
+      <workItem from="1639858630658" duration="24631000" />
+      <workItem from="1640027248275" duration="3970000" />
+      <workItem from="1640115590241" duration="4978000" />
     </task>
     <servers />
   </component>

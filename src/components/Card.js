@@ -1,5 +1,3 @@
-
-
 export default class Card {
     constructor(name, link, cardSelector, handleCardClick) {
         this._name = name;
@@ -13,7 +11,7 @@ export default class Card {
     }
 
     _handleOpenBigImage() {
-        this._handleCardClick.open()
+        this._handleCardClick.open(this._name, this._link)
     }
 
     _handleCardRemove() {
@@ -31,9 +29,8 @@ export default class Card {
         });
 
         this._element.querySelector('.element__image').addEventListener('click', () => {
-            this._handleOpenBigImage();
+            this._handleOpenBigImage(this._name, this._link);
         });
-        this._handleCardClick.setEventListeners();
     }
 
     createCard() {
@@ -46,9 +43,5 @@ export default class Card {
         this._setEventListeners();
 
         return this._element;
-    }
-
-    render(container) {
-        container.prepend(this.createCard());
     }
 }
