@@ -2,14 +2,12 @@ export const imgPopup = document.querySelector('.popup__img');
 export const titlePopup = document.querySelector('.popup__text');
 export const popupProfile = document.querySelector('.popup_profile');
 export const buttonOpenPopupProfile = document.querySelector('.profile__button-edit');
-export const popupFormProfile = popupProfile.querySelector('.popup__form');
-export const nameInput = popupFormProfile.querySelector('.popup__field_input_name');
-export const jobInput = popupFormProfile.querySelector('.popup__field_input_job');
 export const templateElement = document.querySelector('.template-element');
 export const popupAddElement = document.querySelector('.popup_element');
 export const elementAddButton = document.querySelector('.profile__button-add');
 export const formPopupProfile = popupProfile.querySelector('.popup__form');
 export const formPopupAddElement = popupAddElement.querySelector('.popup__form');
+export const inputList = document.querySelector('.popup_profile').querySelectorAll('.popup__field');
 
 export const config = {
   formSelector: '.popup__form',

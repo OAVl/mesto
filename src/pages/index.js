@@ -13,21 +13,19 @@ import {
   elementAddButton,
   formPopupProfile,
   formPopupAddElement,
-  nameInput,
-  jobInput,
+  inputList
 } from '../utils/constants.js';
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';
 
+const popupBigImage = new PopupWithImage(imgPopup, titlePopup, '.popup_image');
 
-function handleCardClick(imgPopup, titlePopup, selector) {
-  const popupBigImage = new PopupWithImage(imgPopup, titlePopup, selector);
-  popupBigImage.setEventListeners();
-  return popupBigImage;
+function handleCardClick(name, link) {
+  popupBigImage.open(name, link);
 }
 
 function createdCard(name, link) {
-  const card = new Card(name, link, templateElement, handleCardClick(imgPopup, titlePopup, '.popup_image'));
+  const card = new Card(name, link, templateElement, handleCardClick);
   return card.createCard();
 }
 
@@ -43,8 +41,10 @@ const cardList = new Section({
 const userInfo = new UserInfo({name:'.profile__name', job:'.profile__description'});
 
 const popupWithFormProfile = new PopupWithForm('.popup_profile',
-  {submitRenderer: () => {
-    userInfo.setUserInfo(nameInput, jobInput);
+  {submitRenderer: (formData) => {
+      const name = formData.userName;
+      const job = formData.userJob;
+    userInfo.setUserInfo(name, job);
     popupWithFormProfile.close();
   }})
 
@@ -58,20 +58,28 @@ const popupWithFormAddElement = new PopupWithForm('.popup_element',
 
 popupWithFormProfile.setEventListeners();
 popupWithFormAddElement.setEventListeners();
+popupBigImage.setEventListeners();
 cardList.renderItems();
 
 const validationFormProfile = new FormValidator(config, formPopupProfile);
-validationFormProfile.enableValidation(config);
+validationFormProfile.enableValidation();
 
 const validationFormAddElement = new FormValidator(config, formPopupAddElement);
-validationFormAddElement.enableValidation(config);
+validationFormAddElement.enableValidation();
 
 buttonOpenPopupProfile.addEventListener('click', () => {
-  userInfo.getUserInfo();
+  const userData = userInfo.getUserInfo();
+  inputList.forEach((input) => {
+    input.value = userData.userName
+    if(input.name === 'userJob') {
+      input.value = userData.userJob
+    }
+  });
+  validationFormProfile.resetValidation();
   popupWithFormProfile.open();
 });
 
 elementAddButton.addEventListener('click', () => {
-  validationFormAddElement.resetValidation()
+  validationFormAddElement.resetValidation();
   popupWithFormAddElement.open();
 });

@@ -11,7 +11,7 @@ export default class Card {
     }
 
     _handleOpenBigImage() {
-        this._handleCardClick.open(this._name, this._link)
+        this._handleCardClick(this._name, this._link)
     }
 
     _handleCardRemove() {
