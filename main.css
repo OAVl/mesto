@@ -542,11 +542,26 @@ template {
     border-radius: 50%;
 }
 
+.profile__avatar:hover {
+  opacity: 0.2;
+}
+
+.profile__avatar:hover + .profile__editAvatar {
+  background: url(a086f758840ae814ecde.svg) center no-repeat;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
     .profile__avatar {
         align-self: center;
     }
 }
+
 .profile__container {
     display: flex;
 }
@@ -556,6 +571,11 @@ template {
         flex-direction: column;
     }
 }
+.profile__wrapper-avatar {
+  position: relative;
+  cursor: pointer;
+}
+
 .elements {
     max-width: 880px;
     margin-bottom: 66px;
@@ -592,6 +612,7 @@ template {
     display: flex;
     justify-content: space-between;
     margin: 25px 30px 32px 21px;
+    position: relative;
 }
 
 @media (max-width: 620px) {
@@ -628,6 +649,15 @@ template {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.element__counter-like {
+  margin: 0;
+  position: absolute;
+  right: 8px;
+  top: 27px;
+  font-size: 13px;
+  line-height: 16px;
 }
 
 .footer {
