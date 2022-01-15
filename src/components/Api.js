@@ -48,8 +48,13 @@ export default class Api {
       headers: this._headers
     })
       .then(this._handleRes)
-
   }
+
+  getAllData() {
+    return Promise.all([this.getProfile(), this.getInitialCards()])
+  }
+
+
 
   setCard(card) {
     return fetch(`${this._url}/cards`, {

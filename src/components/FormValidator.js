@@ -4,7 +4,7 @@ export default class FormValidator {
         this._formElement = formElement;
         this._inputList = this._formElement.querySelectorAll(this._config.inputSelector);
         this._buttonElement = this._formElement.querySelector(this._config.submitButtonSelector);
-        this._inputErrorClass = this._formElement.querySelector(this._config.inputErrorClass);
+        this._inputErrorClass = this._config.inputErrorClass;
     }
 
     _handleFieldValidation(evt, inputErrorClass) {
